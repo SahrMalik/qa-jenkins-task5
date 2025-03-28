@@ -4,14 +4,14 @@ pipeline {
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub')
         SECRET_VAR = credentials('secret_text')
-        DOCKER_IMAGE = "your-dockerhub-username/nginx-custom:${BUILD_NUMBER}"
+        DOCKER_IMAGE = "sahrmalik/nginx-custom:${BUILD_NUMBER}"
     }
     
     stages {
         stage('Checkout') {
             steps {
-                // Use the credentials you'll create in Jenkins
-                git credentialsId: 'git-credentials', 
+                git branch: 'main',  // Changed from 'master' to 'main'
+                    credentialsId: 'git-credentials', 
                     url: 'https://github.com/SahrMalik/qa-jenkins-task5'
             }
         }
