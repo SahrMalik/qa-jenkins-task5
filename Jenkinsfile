@@ -12,7 +12,7 @@ pipeline {
             steps {
                 // Use the credentials you'll create in Jenkins
                 git credentialsId: 'git-credentials', 
-                    url: 'YOUR_PRIVATE_REPO_URL'
+                    url: 'https://github.com/SahrMalik/qa-jenkins-task5'
             }
         }
         
